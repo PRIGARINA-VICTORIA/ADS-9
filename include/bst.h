@@ -13,7 +13,7 @@ struct Node {
 };
 template <typename T>
 class BST {
-private:
+ private:
     Node<T> *root;
     int depthValue;
     void getDepth(Node<T>*tree, int index) {
@@ -27,7 +27,7 @@ private:
         index > depthValue ? depthValue = index : depthValue;
     }
 
-public:
+ public:
     BST() {
         root = nullptr;
         depthValue = 0;
@@ -42,8 +42,7 @@ public:
             current->count = 1;
             root = current;
             return;
-        }
-        else {
+        } else {
             Node<T>* pref = nullptr;
                 bool isleft = false;
             while (true) {
@@ -56,24 +55,20 @@ public:
                     if (pref != nullptr) {
                         if (isleft == true) {
                             pref->left = current;
-                        }
-                        else {
+                        } else {
                             pref->right = current;
                         }
                         pref = nullptr;
                     }
                     break;
-                }
-                else if (element == current->value) {
+                } else if (element == current->value) {
                     current->count++;
                     break;
-                }
-                else if (element > current->value) {
+                } else if (element > current->value) {
                     isleft = false;
                     pref = current;
                     current = current->right;
-                }
-                else if (element < current->value) {
+                } else if (element < current->value) {
                     isleft = true;
                     pref = current;
                     current = current->left;
@@ -86,11 +81,9 @@ public:
         while (true) {
             if (current->value == element) {
                 return current->count;
-            }
-            else if (element > current->value) {
+            } else if (element > current->value) {
                 current = current->right;
-            }
-            else if (element < current->value) {
+            } else if (element < current->value) {
                 current = current->left;
             }
         }
