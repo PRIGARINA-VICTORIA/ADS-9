@@ -8,7 +8,7 @@
 BST<std::string> makeTree(const char* filename) {
   // поместите сюда свой код
 BST<std::string> tree;
-std::ifstream file("C:\\Users\\HUAWEI\\Downloads\\war_peace.txt");
+std::ifstream file(filename);
 if (!file) {
     std::cout << "File error!" << std::endl;
     throw std::string("Can not open file!");
