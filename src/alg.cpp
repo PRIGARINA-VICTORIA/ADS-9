@@ -19,8 +19,7 @@ while (!file.eof()) {
     int code = ch;
     if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
         word += tolower(code);
-    }
-    else {
+    } else {
         if (word != "") {
             tree.Add(word);
             word = "";
@@ -28,6 +27,6 @@ while (!file.eof()) {
     }
 }
 file.close();
-return 0;
+return tree;
 }
 
